@@ -1,0 +1,39 @@
+﻿@model FirstApp.Models.Pointers
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form action="/Pointers/Calculate" method="post">
+                <div class="mb-3">
+                    <label class="form-label">X1</label>
+                    <input type="number" class="form-control" name="X1" value="" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Y1</label>
+                    <input type="number" class="form-control" name="Y1" value="" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">X2</label>
+                    <input type="number" class="form-control" name="X2" value="" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Y2</label>
+                    <input type="number" class="form-control" name="Y2" value="" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-dark px-5 rounded-pill">CALCULAR</button>
+                </div>
+                <hr />
+                <div class="py-5 text-center">
+                    @ViewBag.Result
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

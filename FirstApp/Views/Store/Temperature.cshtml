@@ -1,0 +1,30 @@
+﻿@model FirstApp.Models.Temperature
+
+@{
+    ViewBag.Title = "Temperature";
+}
+
+
+<form action="/Store/CalculateTemperature" method="POST">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h1 class="fw-bold text-primary mb-5 text-center">Calculadora de Grados</h1>
+            <div class="mb-3 text-center">
+                @Html.LabelFor(model => model.Degres,
+                htmlAttributes: new { @class = "form-label" })
+                @Html.EditorFor(model => model.Degres,
+                   new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="mb-3 d-flex justify-content-center gap-2">
+                @Html.RadioButtonFor(model => model.Selected, "Celsius", new { id = "Celsius", @class = "btn-check" }) @Html.Label("Celsius", "To Celsius", new { @class = "btn btn-outline-primary" })
+                @Html.RadioButtonFor(model => model.Selected, "Fahrenheit", new { id = "Fahrenheit", @class = "btn-check" }) @Html.Label("Fahrenheit", "To Fahrenheit", new { @class = "btn btn-outline-primary" })
+            </div>
+
+            <button type="submit" class="w-100 btn btn-outline-dark rounded-pill">CALCULATE</button>
+            <hr />
+            <p class="text-primary fs-1 text-center">
+                @TempData["Result"]
+            </p>
+        </div>
+    </div>
+</form>

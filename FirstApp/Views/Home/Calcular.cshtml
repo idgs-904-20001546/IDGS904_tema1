@@ -1,0 +1,39 @@
+﻿@model FirstApp.Models.OperasBas
+
+@{
+    ViewBag.Title = "Calcular";
+}
+
+<h2 class="text-center mb-5">Calcular</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <form class="col-md-6" action="/" method="post">
+            <div class="mb-3">
+                <input type="text" placeholder="Numero 1" name="Num1" value="" />
+            </div>
+            <div class="mb-3">
+                <input type="text" placeholder="Numero 2" name="Num2" value="" />
+            </div>
+
+            <div class="mb-3">
+                <input type="radio" id="plus" name="Operation" value="plus" />
+                <label for="plus">Sumar</label>
+                <input type="radio" id="less" name="Operation" value="less" />
+                <label for="less">Restar</label>
+                <input type="radio" id="multiply" name="Operation" value="multiply" />
+                <label for="multiply">Multiplicar</label>
+                <input type="radio" id="division" name="Operation" value="division" />
+                <label for="division">Dividir</label>
+
+            </div>
+
+            <button type="submit" class="btn btn-outline-dark px-5 rounded-pill">CALCULAR</button>
+
+        </form>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <p class="display-6 text-primary">El resultado de la operación @Html.DisplayFor(modal=>Model.Res)</p>
+        </div>
+    </div>
+</div>

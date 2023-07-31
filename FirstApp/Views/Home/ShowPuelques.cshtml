@@ -1,0 +1,31 @@
+﻿@model List<FirstApp.Models.Product>
+
+@{
+    ViewBag.Title = "ShowPuelques";
+}
+
+<h2>ShowPuelques</h2>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Producción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Production</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

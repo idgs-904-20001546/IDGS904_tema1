@@ -1,0 +1,34 @@
+﻿@model FirstApp.Models.Translation
+
+@{
+    ViewBag.Title = "Translate";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Translator</h1>
+            <form action="" method="post">
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Word, new { htmlAttributes = new { @class = "form-label" } })
+                    @Html.EditorFor(model => model.Word, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="mb-5">
+                    <input type="radio" id="en" name="Selected" value="en" />
+                    <label for="en">Ingles</label>
+
+                    <input type="radio" id="es" name="Selected" value="es" />
+                    <label for="es">Español</label>
+                </div>
+
+                <div class="text-primary fs-4 text-center py-4">
+                    @ViewBag.Translation
+                </div>
+                <button type="submit" class="btn btn-outline-dark px-5 py-2 rounded-pill">
+                    Translate
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
